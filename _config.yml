@@ -8,6 +8,9 @@ remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
 
 mathjax: true
 markdown: kramdown
