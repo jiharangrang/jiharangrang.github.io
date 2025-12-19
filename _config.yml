@@ -1,21 +1,32 @@
-title: "Harang's Robotics Log"
+title: "Harang Robotics Log"
 description: "Control · Dynamics · Robotics · Vision"
-lang: "ko"
+lang: "en"
 timezone: "Asia/Seoul"
 
-theme: minima
-
-# 메뉴(상단 네비게이션)
-header_pages:
-  - about.md
-  - projects.md
-
+remote_theme: "mmistakes/minimal-mistakes"
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-minima:
-  skin: auto
-  social_links:
-    - { platform: github,  user_url: "https://github.com/jiharangrang" }
+
+minimal_mistakes_skin: "default"
+
+
+nav:
+  - title: "About"
+    url: /about/
+  - title: "Posts"
+    url: /posts/
+  - title: "Projects"
+    url: /projects/
+
+
+author:
+  name: "Harang Ji"
+  bio: "Mechanical Engineering student."
+  location: "Seoul, Korea"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/jiharangrang"
