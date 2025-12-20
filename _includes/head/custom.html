@@ -1,0 +1,153 @@
+{% if page.mathjax or site.mathjax %}
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}
+
+<link rel="stylesheet" href="{{ '/assets/css/rouge-base16-solarized-light.css' | relative_url }}">
+
+<style>
+  /* 포스트 페이지 폭과 여백 조정 */
+  #main {
+    max-width: 1500px; /* 모든 화면에서 최대 폭 제한 */
+    padding-inline: 2em;
+  }
+  
+  @media (min-width: 64em) {
+    #main {
+      padding-inline: 3em;
+    }
+  }
+  
+  @media (min-width: 80em) {
+    #main {
+      padding-inline: 4em;
+    }
+  }
+  
+  /* 작은 화면에서도 페이지 폭 제한 */
+  .page {
+    max-width: 1500px;
+    margin-inline: auto;
+  }
+  
+  /* 데스크톱 (460px 이상): 콘텐츠 폭과 글자 크기 고정 */
+  @media (min-width: 460px) {
+    .page__inner-wrap {
+      max-width: 724px !important;
+      margin-inline: auto !important;
+    }
+    
+    .page__content,
+    .page__content p,
+    .page__content li,
+    .page__content td,
+    .page__content div {
+      max-width: 724px !important;
+      margin-inline: auto !important;
+      font-size: 16px !important; /* 절대 크기 고정 (16px × 0.8) */
+    }
+  }
+  
+  /* 768px, 1024px 브레이크포인트에서도 글자 크기 고정 */
+  @media (min-width: 768px) {
+    .page__content,
+    .page__content p,
+    .page__content li,
+    .page__content td,
+    .page__content div {
+      font-size: 16px !important;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .page__content,
+    .page__content p,
+    .page__content li,
+    .page__content td,
+    .page__content div {
+      font-size: 16px !important;
+    }
+  }
+  
+  /* 모바일 (460px 미만): 반응형 (좌우 여백과 글자 크기) */
+  @media (max-width: 459px) {
+    .page__inner-wrap,
+    .page__content {
+      max-width: 100% !important;
+      padding-inline: 1em;
+    }
+    
+    .page__content {
+      font-size: 0.8em; /* 모바일은 상대 크기 */
+    }
+  }
+  
+  /* 코드 스니펫 글자 크기 조정 */
+  @media (min-width: 460px) {
+    /* 코드 블록만 12px */
+    .page__content pre,
+    .page__content pre code {
+      font-size: 12px !important;
+    }
+    
+    /* 인라인 코드는 (14px) */
+    .page__content p code,
+    .page__content li code,
+    .page__content td code,
+    .page__content h1 code,
+    .page__content h2 code,
+    .page__content h3 code,
+    .page__content h4 code {
+      font-size: 14px !important;
+    }
+  }
+  
+  @media (max-width: 459px) {
+    .page__content pre,
+    .page__content pre code {
+      font-size: 0.75em; /* 모바일 코드 블록 */
+    }
+    
+    .page__content p code,
+    .page__content li code,
+    .page__content td code {
+      font-size: 0.8em; /* 모바일 인라인 코드 */
+    }
+  }
+  
+  /* 제목 크기 조정 (0.7em일 때와 동일한 크기 유지) */
+  .page__content h1 {
+    font-size: 2em; /* 0.7 × 2.29 = 0.8 × 2 */
+  }
+  
+  .page__content h2 {
+    font-size: 1.5em; /* 0.7 × 1.71 = 0.8 × 1.5 */
+  }
+  
+  .page__content h3 {
+    font-size: 1.2em; /* 0.7 × 1.37 = 0.8 × 1.2 */
+  }
+  
+  .page__content h4 {
+    font-size: 1em; /* 0.7 × 1.14 = 0.8 × 1 */
+  }
+  
+  /* 코드 블록 배경색 및 기본 글자색 (Solarized Light) */
+  .page__content div.highlighter-rouge,
+  .page__content figure.highlight,
+  .page__content pre {
+    background-color: #fdf6e3 !important;
+    color: #586e75;
+  }
+</style>

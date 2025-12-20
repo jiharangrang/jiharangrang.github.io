@@ -14,8 +14,11 @@ plugins:
 
 mathjax: true
 markdown: kramdown
+highlighter: rouge
 kramdown:
+  input: GFM
   math_engine: mathjax
+  syntax_highlighter: rouge
 
 
 minimal_mistakes_skin: "default"
