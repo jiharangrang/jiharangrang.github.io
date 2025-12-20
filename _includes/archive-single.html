@@ -1,0 +1,17 @@
+{% assign post = include.post | default: post | default: page %}
+{% assign post_title = post.title | default: "Untitled" %}
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      <a href="{{ post.url | relative_url }}" rel="permalink">
+        {% if post.categories %}
+          <span class="archive__item-category">[{{ post.categories | join: " · " }}]</span>
+          <span class="archive__item-sep">»</span>
+        {% endif %}
+        <span class="archive__item-title-text">{{ post_title }}</span>
+      </a>
+    </h2>
+
+  </article>
+</div>
