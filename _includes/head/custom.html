@@ -150,4 +150,39 @@
     background-color: #fdf6e3 !important;
     color: #586e75;
   }
+
+  /* 인라인 코드만 배경 적용 (블록 코드 제외) */
+  .page__content :not(pre) > code {
+    background-color: #fdf6e3;
+  }
+
+  /* 저대비 토큰(식별자/내장명 등) 대비 강화 */
+  .page__content .highlight .n,
+  .page__content .highlight .nb,
+  .page__content .highlight .bp,
+  .page__content .highlight .nn,
+  .page__content .highlight .nc,
+  .page__content .highlight .no,
+  .page__content .highlight .nf,
+  .page__content .highlight .nv {
+    color: #2f2f2f;
+  }
+
+  /* 제목과 첫 헤더 분리 (여백 + 구분선) */
+  .page__title {
+    margin-bottom: 0.9em;
+  }
+
+  .page__title::after {
+    content: "";
+    display: block;
+    margin-top: 0.6em;
+    border-bottom: 1px solid #e6e1d6;
+  }
+
+  .page__content > h1:first-child,
+  .page__content > h2:first-child,
+  .page__content > h3:first-child {
+    margin-top: 1.4em;
+  }
 </style>
