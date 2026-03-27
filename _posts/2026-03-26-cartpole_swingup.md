@@ -1,6 +1,6 @@
 ---
 layout: single
-title:
+title: "강화학습으로 Cart-pole 제어하기"
 date: 2026-03-26
 categories: [Control]
 tags: [RL]
