@@ -1,11 +1,13 @@
 ---
 layout: single
-title: "강화학습으로 Cart-pole 제어하기"
+title: "[기초] 강화학습으로 Cart-pole 제어하기"
 date: 2026-03-26
 categories: [Control]
 tags: [RL]
 mathjax: true
 ---
+
+코드베이스는 [여기](https://github.com/jiharangrang/dm_cartpole)에 정리해 두었다.
 
 # 강화학습 워크플로우 배우기
 

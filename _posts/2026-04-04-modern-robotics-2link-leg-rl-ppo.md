@@ -7,6 +7,8 @@ tags: [RL]
 mathjax: true
 ---
 
+코드베이스는 [여기](https://github.com/jiharangrang/Modern_Robotics/tree/main/week6/projects)에 정리해 두었다.
+
 ## 목표
 
 이번 주의 목표는 내가 만든 2-link 다리 동역학 문제를 RL 문제로 바꾸는 것이다.  
@@ -193,6 +195,11 @@ observation을 넣으면 action을 내고, 그걸 반복하면서 점점 나아�
 이 결과에서 가장 먼저 눈에 들어온 것은 IK baseline이 확실히 좋았다는 점이다.  
 적어도 내가 만든 환경에서, 손으로 만든 기준 정책은 목표를 꽤 잘 따라간다는 것은 확인할 수 있었다.  
 
+<p align="center">
+  <img src="{{ '/assets/posts/2026-04-04-modern-robotics-2link-leg-rl-ppo/1_baseline_ik.gif' | relative_url }}" style="width: 70%; max-width: 520px; height: auto;">
+</p>
+
+IK baseline rollout을 보면, 이 문제에서는 손으로 만든 기준 정책도 꽤 안정적으로 목표 쪽으로 수렴하는 편이라는 것을 직관적으로 볼 수 있었다.
 
 베이스라인은 PPO 결과를 해석할 때 중요하다.  
 만약 IK도 안 됐다면, PPO가 못 배우는 이유를 policy 탓으로 볼 수 없기 때문이다.
@@ -234,6 +241,13 @@ success rate는 중간에 `30% -> 20% -> 20%`처럼 깔끔하게 오르지는 �
 
 그래도 가장 긴 `5000000 step`에서는 success rate가 `50%`까지 올라갔고, final distance도 가장 작았다.  
 지금까지 해 본 run들 중에서는 이 결과가 제일 좋았다.
+
+<p>
+  <img src="{{ '/assets/posts/2026-04-04-modern-robotics-2link-leg-rl-ppo/2_success_curve.png' | relative_url }}" width="48%" />
+  <img src="{{ '/assets/posts/2026-04-04-modern-robotics-2link-leg-rl-ppo/3_episode_best.gif' | relative_url }}" width="48%" />
+</p>
+
+왼쪽은 `5000000 step` run에서 checkpoint별 success rate가 어떻게 바뀌는지 보여주는 그래프이고, 오른쪽은 같은 run에서 가장 잘 된 rollout 예시다. 숫자로만 볼 때보다, 학습이 진행되면서 실제 움직임도 어느 정도 목표 쪽으로 정리된다는 점을 더 직관적으로 볼 수 있었다.
 
 ### 각 run 안에서의 checkpoint 변화
 

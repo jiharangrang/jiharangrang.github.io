@@ -7,6 +7,8 @@ tags: [RL]
 mathjax: true
 ---
 
+코드베이스는 [여기](https://github.com/jiharangrang/Modern_Robotics/tree/main/week6_extended)에 정리해 두었다.
+
 이전 포스팅에서는 custom env를 만들고, baseline을 두고, PPO가 실제로 학습되는지까지는 확인했다. 그 과정만으로도 강화학습을 처음 붙여보는 경험은 충분히 할 수 있었지만, 실험을 더 해보려고 하니 아쉬운 점도 분명히 보였다.
 
 예를 들면 이런 것들이었다.
